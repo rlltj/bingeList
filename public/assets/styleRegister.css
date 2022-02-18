@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-image: url(bgLogin.png);
+    background-size: cover;
+    color: rgb(255, 214, 102);
+    margin: 0;
+}
+
+.regBx{
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}
+
+.success {
+    color: darkgreen;
+    font-size: 20px;
+}
+
+img{
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+span{
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.inreg{
+    margin-left:auto;
+    margin-right:auto;
+    display: table;
+    
+}
+
+form{
+    padding-left: 25px;
+}
+
+label{
+    font-size: 20px;
+    text-align: center ;
+    color: white;
+}
+
+input{
+    font-size: 20px;
+}
+
+.flabel{
+    width: 200px;
+}
+
+.glabel{
+    width: 200px;
+    vertical-align: top;
+}
+
+tr{
+    height: 75px;
+}
+
+.fint{
+    width: 350px;
+}
+
+#bio{
+    height: 100px;
+    width: 360px;
+}
+
+#bioint{
+    padding-top: 30px;
+}
+
+#submit{
+    font-size: 25px;
+    font-weight: bold;
+    width: 150px;
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 50px;
+}
+
+#submit:hover{
+    color: white;
+    background-color: rgb(250, 183, 0);
+}

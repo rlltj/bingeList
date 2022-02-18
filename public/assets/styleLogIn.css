@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-image: url(bgLogin.png);
+    background-size: cover;
+    color: rgb(255, 214, 102);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:max-content;
+    margin: 200px;
+
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}
+
+.success {
+    color: darkgreen;
+    font-size: 20px;
+}
+
+.loginBx{
+    background-color:   rgba(0, 0, 0, 0.9);
+    width: 500px;
+    height: inherit;
+}
+
+img{
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+
+label{
+    font-size: 25px;
+    text-align: center ;
+    color: white;
+}
+
+input[type=text],input[type=password] {
+    color:black;
+    background-color: rgb(248, 230, 180);
+    border: 3px solid rgb(250, 183, 0) ;
+}
+
+
+#submit{
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    height: 35px;
+
+}
+
+#submit:hover{
+    color: white;
+    background-color: rgb(250, 183, 0);
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#submit{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 25px;
+}
+
+p{
+    text-align: center;
+}
+
+#reg{
+    color: white;
+}
+

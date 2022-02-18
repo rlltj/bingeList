@@ -1,0 +1,67 @@
+<!--MODALLLLLLLL-->
+<div id="myModalList" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="inAddList">
+            <h1>Create a New BingeList</h1><br>
+            <form action="/create-list" method="post">
+                <table>
+                    <tr>
+                        <td class="flabel"><label for="listName">Name of List:</label></td>
+                        <td class="fint" colspan = "2"><input type="text" size="30" id="listname" name="ltname"></td>
+                    </tr>
+                    <tr>
+                        <td class="flabel">Privacy:</td>
+                        <td class="fint">
+                            <input type="radio" id="private" name="privacy" value="Private">
+                            <label for="private">Private</label>
+                        </td>
+                        <td class="fint">
+                            <input type="radio" id="public" name="privacy" value="Public">
+                            <label for="public">Public</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="flabel"><label for="desc">Description (optional):</label></td>
+                        <td id="bioint" colspan = "2"><textarea id="desc" name="description" cols="30" rows="4" >
+                        </textarea></td>
+                    </tr>
+                </table>
+                <div class="btn"><input id="button" type="submit" value="Create Now!"></div>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+
+  </div>
+
+<script>
+  // Get the modal
+  var modalList = document.getElementById("myModalList");
+
+  // Get the button that opens the modal
+  var btnList = document.getElementsByClassName("addList")[0];
+
+  // Get the <span> element that closes the modal
+  var spanList = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btnList.onclick = function() {
+    modalList.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spanList.onclick = function() {
+    modalList.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modalList) {
+      modalList.style.display = "none";
+    }
+  }
+  </script>

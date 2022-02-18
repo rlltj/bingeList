@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+
+*{
+    margin-bottom: 0;
+}
+body {
+    margin: 0;
+    font-family: 'Readex Pro', sans-serif;
+    background-image: url(bgLogin.png);
+    background-size: cover;
+  }
+
+.container{
+    display: block;
+}
+.menubar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}
+
+.success {
+    color: darkgreen;
+    font-size: 20px;
+}
+ 
+#homeBt{
+    padding-left: 25px;
+    height: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+#profileBt{
+    padding-right: 25px;
+    height: 50px;
+    margin-top: 10px;
+    float: right;
+}
+
+.dpCont{
+    padding-top: 30px;
+    display: flex;
+    padding-left: 10%;
+}
+
+#dp{
+    height: 200px;
+    
+}
+
+.profCont{
+    background-color: rgba(255, 255, 255, 0.904);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.nameBio{
+    display: block;
+    width: 60%;
+    margin-left: 30px;
+}
+
+#lbMyProfile{
+    font-size: 60px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    
+}
+
+#bio{
+    margin-top: 0;
+    text-align: justify;
+}
+
+.infoprof{
+    margin-left: 15%;
+    margin-top: 30px;
+    
+}
+
+.flabel{
+    width: 250px;
+}
+
+#lbGenre{
+    vertical-align: top;
+}
+
+.variables{
+    font-weight: bolder;
+}
+
+td{
+    font-size: 20px;
+    height: 40px;
+}
+
+.btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    margin-top: 50px;
+    
+}
+
+#button {
+    padding: 15px 25px;
+    font-size: 19px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+#button:hover {background-color: #3e8e41}
+  
+#button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#button2 {
+    padding: 15px 25px;
+    font-size: 19px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #7a0303;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+#button2:hover {background-color: #ce3939}
+  
+#button2:active {
+    background-color: #b11212;
+    box-shadow: 0 5px rgb(66, 0, 0);
+    transform: translateY(4px);
+}
+
+.bottomFixButtionComponent{
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    padding: 10px;
+}
+
+#addListPic{
+    height: 100px;
+}
+
+.addList{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+  .modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+  }
+  .inAddList{
+    margin-left:auto;
+    margin-right:auto;
+    display: table;
+    
+}
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .inreg{
+    margin-left:auto;
+    margin-right:auto;
+    display: table;
+    
+}

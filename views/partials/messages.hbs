@@ -1,0 +1,15 @@
+{{#if error_msg}}
+<div class="row">
+  <div class="col s12 card-panel z-depth-0 red lighten-5">
+    <h6 class="error"><strong>{{error_msg}}</strong></h6>
+  </div>
+</div>
+{{/if}}
+
+{{#if success_msg}}
+<div class="row">
+  <div class="col s12 card-panel z-depth-0 green lighten-5">
+    <h6 class="success"><strong>{{success_msg}}</strong></h6>
+  </div>
+</div>
+{{/if}}

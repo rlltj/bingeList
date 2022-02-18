@@ -1,0 +1,39 @@
+<!--MODAL FOR EDIT LIST-->
+
+    <!-- Modal content -->
+    <div class="modal-content2">
+        <span class="close">&times;</span>
+        <div class="inAddList">
+            <h1>Edit BingeList Information</h1><br>
+            <form action="{{ listID }}/update-list" method="post">
+                <table>
+                    <tr>
+                        <td class="flabel"><label for="listName">Name of List:</label></td>
+                        <td class="fint" colspan = "2"><input type="text" size="30" id="listname" name="ltname" value="{{ ltname }}"></td>
+                    </tr>
+                    <tr>
+                        <td class="flabel">Privacy:</td>
+                        <td class="fint">
+                            <input type="radio" id="private" name="privacy" value="Private">
+                            <label for="private">Private</label>
+                        </td>
+                        <td class="fint">
+                            <input type="radio" id="public" name="privacy" value="Public">
+                            <label for="public">Public</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="flabel"><label for="desc">Description (optional):</label></td>
+                        <td id="bioint" colspan = "2">
+                            <textarea id="desc" name="description" cols="30" rows="4">
+                                {{ description }}
+                            </textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn"><input id="button" type="submit" value="Update!"></div>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,290 @@
+<html>
+<head>
+    <title>
+        The BingeList-List
+    </title>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
+    <link rel = stylesheet type="text/css" media="all" href="assets/styleList.css">
+    <link rel = "icon" href = "/assets/icon.png" type = "image/x-icon">
+</head>
+<body>
+    <div class="container">
+        {{> menubar }}
+        <div class="listCt">
+            <div class="iconCont">
+                <div class="imageDiv"><img id = "dp" src = "assets/listIcon.png" ></div>
+                <div class="titleBio">
+                    <span id="lbList">{{ ltname }}</span>
+                    <button class="editlist" onclick="showEditListModal()"><img id="editIcon" src="assets/editIcon.png" onmouseover="this.src='assets/editIcon2.png'" onmouseout="this.src='assets/editIcon.png'"></button>
+                    <button class="dellist" onclick="location.href=window.location.href+'/delete-list'"><img id="delIcon" src="assets/trash.png" onmouseover="this.src='assets/trash2.png'" onmouseout="this.src='assets/trash.png'"></button>
+                    
+                    
+                    <p id="bio">{{ description }}</p>
+                    <br>
+                    <span id="privacy"> {{ privacy }} </span>
+                    {{> messages }}
+                </div>
+                
+            </div>
+            <div class="msbCt">
+                <div class="moviesCt">
+                    <h1>Movies</h1>
+                    <div class="moviesIn">
+                        {{#each item}}
+                            {{> moviebtn movieID=movieID poster=poster title=title year=year synopsis=synopsis director=director}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="bottomFixButtionComponent">
+        <button class="addMov" onclick="showItemAddModal()"><img id = "addMovPic" src="assets/addMov.png" onmouseover="this.src='assets/addMov2.png'" onmouseout="this.src='assets/addMov.png'" alt="Add a Binge"></button>
+    </div>  
+    
+    
+    
+    <div id="addItmModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="addItmModalIn">
+                <div class="searchDiv">
+                    <h1 id="lbSearch">Search a binge here!</h1>
+                    <input id="searchBox" type="search" name="query" placeholder="Type a movie or director or year here.">
+                </div>
+                <div class="result">
+                    <div class="resultsCt">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="editListModal" class="modal">
+        {{> updatelist }}
+    </div>
+    
+    <div id="itmModal" class="modal">
+            <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="itmModalIn">
+                <div class="headerMd"> 
+                    <div class="posterMd"><img id = "posterPicMd"></div>
+                    <div class="infoItemMd">
+                        <span id="titleItemMd"></span> <br>
+                        <span id="direcItemMd"></span> <br> 
+                        <br>
+<!--
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="shk" src="assets/reactSHK.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="cry" src="assets/reactCRY.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="eww" src="assets/reactEWW.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="luv" src="assets/reactLUV.png"> </button>
+-->
+                        
+                        <form action="/add-to-list" method="post">
+                            <input id="listID" type="hidden" name="listID">
+                            <input id="movieID" type="hidden" name="movieID">
+                            <input id="poster" type="hidden" name="poster">
+                            <input id="title" type="hidden" name="title">
+                            <input id="year" type="hidden" name="year">
+                            <input id="synopsis" type="hidden" name="synopsis">
+                            <input id="director" type="hidden" name="director">
+                            <input id="addToListMd" style="vertical-align: middle;" type="submit" value="Add to List">
+                        </form>
+<!--                        <button id="addToListMd" style="vertical-align: middle;"><span>Add to BingeList</span></button>-->
+                        
+                        
+                        <div class="descCtMd">
+                            <h3 id="synopsis">Synopsis:</h3>
+                            <p id="descItemMd"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="itmModalDel" class="modal">
+            <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="itmModalIn">
+                <div class="headerMd"> 
+                    <div class="posterMd"><img id = "posterPicMdDel"></div>
+                    <div class="infoItemMd">
+                        <span id="titleItemMdDel"></span> <br>
+                        <span id="direcItemMdDel"></span> <br> 
+                        <br>
+<!--
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="shk" src="assets/reactSHK.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="cry" src="assets/reactCRY.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="eww" src="assets/reactEWW.png"> </button>
+                        <button class="react" onclick="location.href='http://www.google.com'"> <img id="luv" src="assets/reactLUV.png"> </button>
+-->
+                        
+                        <form id="formDel" method="post">
+                            <input id="listID" type="hidden" name="listID">
+                            <input id="movieID" type="hidden" name="movieID">
+                            <input id="poster" type="hidden" name="poster">
+                            <input id="title" type="hidden" name="title">
+                            <input id="year" type="hidden" name="year">
+                            <input id="synopsis" type="hidden" name="synopsis">
+                            <input id="director" type="hidden" name="director">
+                            <input id="addToListMd" style="vertical-align: middle;" type="submit" value="Delete from List">
+                        </form>
+<!--                        <button id="addToListMd" style="vertical-align: middle;"><span>Add to BingeList</span></button>-->
+                        
+                        
+                        <div class="descCtMd">
+                            <h3 id="synopsis">Synopsis:</h3>
+                            <p id="descItemMdDel"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Get the modal
+        var modalItem = document.getElementById("itmModal");
+        var modalAddItem = document.getElementById("addItmModal");
+        var modalEditList = document.getElementById("editListModal");
+        var modalItemDel = document.getElementById("itmModalDel");
+
+        // Get the <span> element that closes the modal
+        var spanItem = document.getElementsByClassName("close")[2];
+        var spanItem2 = document.getElementsByClassName("close")[0];
+        var spanItem3 = document.getElementsByClassName("close")[1];
+        var spanItem4 = document.getElementsByClassName("close")[3];
+
+        // When the user clicks the button, open the modal 
+        function showModal() {
+            modalItem.style.display = "block";
+        }
+        
+        function showModalDel() {
+            modalItemDel.style.display = "block";
+        }
+
+        function showItemAddModal() {
+            modalAddItem.style.display = "block";
+        }
+
+        function showEditListModal() {
+            modalEditList.style.display = "block";
+        }
+
+      
+        // When the user clicks on <span> (x), close the modal
+        spanItem.onclick = function() {
+            modalItem.style.display = "none";
+        }
+
+        spanItem2.onclick = function() {
+            modalAddItem.style.display = "none";
+        }
+
+        spanItem3.onclick = function() {
+            modalEditList.style.display = "none";
+        }
+        
+        spanItem4.onclick = function() {
+            modalItemDel.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalItem ) {
+                modalItem.style.display = "none";
+            }
+            if (event.target == modalAddItem ) {
+                modalAddItem.style.display = "none";
+            }
+            if (event.target == modalEditList ) {
+                modalEditList.style.display = "none";
+            }
+            if (event.target == modalItemDel ) {
+                modalItemDel.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        function showInfo(id) {
+            $.get('getInfo', function(data, status) {
+                console.log(data);
+                var itemModal = $('#itmModal');
+
+                var movie = data.filter(function(item) { 
+                    return item._id === id;
+                });
+                
+                var path = location.pathname;
+                path = path.replace('/','')
+                
+//                <button id="addToList" style="vertical-align: middle;"><span>Add to BingeList</span></button>
+
+                movie.forEach((item, i) => {
+                    $('#posterPicMd').attr("src", item.poster);
+                    $('#titleItemMd').text(item.title);
+                    $('#direcItemMd').text(item.director);
+                    $('#descItemMd').text(item.synopsis);
+                    console.log(item);
+//                    $('#addToListMd').attr("onclick", "location.href=" + window.location.href + "/" + item._id + "/add-to-list")
+                    $("#listID").attr("value", path);
+                    $("#movieID").attr("value", item._id);
+                    $("#poster").attr("value", item.poster);
+                    $("#title").attr("value", item.title);
+                    $("#year").attr("value", item.year);
+                    $("#synopsis").attr("value", item.synopsis);
+                    $("#director").attr("value", item.director);
+                })
+            });
+
+            $('#itmModal').attr("style", "display: block;");
+        };
+    </script>
+    
+    <script>
+        function showInfoDel(id) {
+            $.get('/'+id+'/getInfoDel', function(data, status) {
+                console.log(data);
+                var itemModal = $('#itmModalDel');
+                
+                var path = location.pathname;
+                path = path.replace('/','')
+                
+//                <button id="addToList" style="vertical-align: middle;"><span>Add to BingeList</span></button>
+
+                data.forEach((item, i) => {
+                    $('#posterPicMdDel').attr("src", item.poster);
+                    $('#titleItemMdDel').text(item.title);
+                    $('#direcItemMdDel').text(item.director);
+                    $('#descItemMdDel').text(item.synopsis);
+                    console.log(item);
+//                    $('#addToListMd').attr("onclick", "location.href=" + window.location.href + "/" + item._id + "/add-to-list")
+                    $("#formDel").attr("action", "/" + path + "/" + item._id + "/delete-from-list");
+                    $("#listID").attr("value", path);
+                    $("#movieID").attr("value", item._id);
+                    $("#poster").attr("value", item.poster);
+                    $("#title").attr("value", item.title);
+                    $("#year").attr("value", item.year);
+                    $("#synopsis").attr("value", item.synopsis);
+                    $("#director").attr("value", item.director);
+                })
+            });
+
+            $('#itmModalDel').attr("style", "display: block;");
+        };
+    </script>
+
+</body>
+</html>

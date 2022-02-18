@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>
+            The BingeList-Register
+        </title>
+        <link rel = stylesheet type="text/css" media="all" href="assets/styleRegister.css">
+        <link rel = "icon" href = "assets/icon.png" type = "image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            <div class="regBx">
+                <br><br>
+                <a href='/home' alt = "Home"><img src="assets/logo.png"><br><br></a>
+                <div class="inreg">
+                    <span>Register</span><br>
+                    {{> messages}}
+                    <form action="/register-attempt", method="post">
+                        <table>
+                            <tr>
+                                <td class="flabel"><label for="fname">First Name:</label></td>
+                                <td class="fint" colspan = "2"><input type="text" size="30" id="fname" name="fname"></td>
+                            </tr>
+                            <tr>
+                                <td class="flabel"><label for="lname">Last Name:</label></td>
+                                <td class="fint" colspan = "2" ><input type="text" size="30" id="lname" name="lname"></td>
+                            </tr>
+                            <tr>
+                                <td class="flabel"><label for="uname">Username:</label></td>
+                                <td class="fint" colspan = "2"><input type="text" size="30" id="uname" name="uname" 
+                                placeholder="Note: This will be permanent."></td>
+                            </tr>
+                            <tr>
+                                <td class="flabel"><label for="password">Password:</label></td>
+                                <td class="fint" colspan = "2"><input type="password" size="30" id="password" name="password"><br></td>
+                            </tr>
+                            <tr>
+                                <td class="glabel"><label for="genre">Preferred Genre/s:</label></td>
+                                <td>
+                                    <input type="checkbox" id="action" name="genres" value="Action"> 
+                                    <label for="action"> Action</label><br>
+                                    <input type="checkbox" id="adventure" name="genres" value="Adventure"> 
+                                    <label for="adventure"> Adventure</label><br>
+                                    <input type="checkbox" id="comedy" name="genres" value="Comedy"> 
+                                    <label for="comedy"> Comedy</label><br>
+                                    <input type="checkbox" id="crime" name="genres" value="Crime"> 
+                                    <label for="crime"> Crime</label><br>
+                                    <input type="checkbox" id="mystery" name="genres" value="Mystery"> 
+                                    <label for="mystery"> Mystery</label><br>
+                                    <input type="checkbox" id="drama" name="genres" value="Drama"> 
+                                    <label for="drama"> Drama</label><br>
+                                    <input type="checkbox" id="fantasy" name="genres" value="Fantasy"> 
+                                    <label for="fantasy"> Fantasy</label><br>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="historical" name="genres" value="Historical"> 
+                                    <label for="historical"> Historical</label><br>
+                                    <input type="checkbox" id="horror" name="genres" value="Horror"> 
+                                    <label for="horror"> Horror</label><br>
+                                    <input type="checkbox" id="romance" name="genres" value="Romance">
+                                    <label for="romance"> Romance</label><br>
+                                    <input type="checkbox" id="satire" name="genres" value="Satire">
+                                    <label for="satire">Satire</label><br>
+                                    <input type="checkbox" id="sci-fi" name="genres" value="Sci-fi">
+                                    <label for="sci-fi"> Sci-fi</label><br>
+                                    <input type="checkbox" id="thriller" name="genres" value="Thriller">
+                                    <label for="thriller"> Thriller</label><br>
+                                    <input type="checkbox" id="western" name="genres" value="Western">
+                                    <label for="western"> Western</label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="flabel"><label for="bio">Bio (optional):</label></td>
+                                <td id="bioint" colspan = "2"><textarea id="bio" name="bio" cols="30" rows="4"></textarea></td>
+                            </tr>
+                            <tr>
+                            <td class="flabel"><label for="avatar">Choose Avatar:</label></td>
+                                <td>
+                                    <input type="radio" id="a1" name="avatar" value=1>  
+                                    <img id = "profileBt" src = "assets/1.png">
+                                    <td>
+                                        <input type="radio" id="a2" name="avatar" value=2>  
+                                        <img id = "profileBt" src = "assets/2.png">
+                                    </td>
+                                </td>
+                             </tr>
+                             <tr>
+                            <td></td>
+                            <td>  
+                                    <input type="radio" id="a3" name="avatar" value=3> 
+                                    <img id = "profileBt" src = "assets/3.png">
+                                   <td> 
+                                    <input type="radio" id="a4" name="avatar" value=4> 
+                                    <img id = "profileBt" src = "assets/4.png">
+                                   </td>
+                                        
+                                     
+                                </td>
+                             </tr>
+                        </table>
+                        <div><input id="submit" type="submit" value="Register"></div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

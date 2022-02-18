@@ -1,0 +1,19 @@
+<div>
+    <button class="movBtn" onclick="showInfoDel('{{ movieID }}')">
+        <div class="item">
+            <div class="poster">
+                <img id = "posterPic" src = {{ poster }} >
+            </div>
+            <div class="infoItem">
+                <span id="titleItem">{{ title }}</span> <br><br>
+                <span id="direcItem">{{ director }}</span> <br><br>
+                <span class="descItem"> {{ synopsis }}</span>
+                <br>
+            </div>
+        </div>
+    </button>
+
+    <div class="spacer">
+        <br>
+    </div>
+</div>

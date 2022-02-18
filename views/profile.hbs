@@ -1,0 +1,266 @@
+<html>
+<head>
+    <title>
+        The BingeList-Profile
+    </title>
+    <link rel = stylesheet type="text/css" media="all" href="assets/styleProfile.css">
+    <link rel = "icon" href = "assets/icon.png" type = "image/x-icon">
+    
+</head>
+<body>
+    <div class="container">
+        {{> menubar }}
+
+        <div class="profCont">
+            <div class="dpCont">
+                <div class="imageDiv"><img id = "dp" src = "assets/{{ avatar }}.png"></div>
+                <div class="nameBio">
+                    <p id="lbMyProfile">Hi {{ fname }}!</p>
+                    <p id="bio">{{ bio }}</p>
+                </div>
+                
+            </div>
+            {{!-- <script>
+                var genre = {{genres}};
+                $('.genre').filter(function () {    
+                    if (genre.indexOf(this.id) != -1)
+                        return $(this).closest('td').find(':checkbox');
+                }).prop("checked", true);
+            </script> --}}
+            <div class="infoProf">
+                {{> messages}}
+                <table>
+                    <tr>
+                        <td class="flabel"><p class="variables">First Name:</p></td>
+                        <td class="fint" colspan = "2"> <p id="fname">{{ fname }}</p></td>
+                    </tr>
+                    <tr>
+                        <td class="flabel"><p class="variables">Last Name:</p></td>
+                        <td class="fint" colspan = "2"> <p id="lname">{{ lname }}</p></td>
+                    </tr>
+                    <tr>
+                        <td class="flabel"><p class="variables">Username:</p></td>
+                        <td class="fint" colspan = "2"> <p id="username">{{ uname }}</p></td>
+                    </tr>
+                    <tr>
+                        <td class="flabel">
+                            <p class="variables">Password:</p>
+                        </td>
+                        <td class="fint" colspan = "2"> 
+                            <input type="password" id="password" value="{{password}}" maxlength="10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="flabel" id="lbGenre"><p class="variables">Preferred Genre/s:</p></td>
+                        <td class="fint" colspan = "2"> <p id="genres">{{ genres }}</p></td>
+                        {{!-- <td><input class="genre" type="checkbox" id="action" name="action" value="Action"> 
+                            <label for="action"> Action</label><br>
+                            <input class="genre" type="checkbox" id="adventure" name="adventure" value="Adventure"> 
+                            <label for="adventure"> Adventure</label><br>
+                            <input class="genre" type="checkbox" id="comedy" name="comedy" value="Comedy"> 
+                            <label for="comedy"> Comedy</label><br>
+                            <input type="checkbox" id="crime" name="crime" value="Crime"> 
+                            <label for="crime"> Crime</label><br>
+                            <input type="checkbox" id="mystery" name="mystery" value="Mystery"> 
+                            <label for="mystery"> Mystery</label><br>
+                            <input type="checkbox" id="drama" name="drama" value="Drama"> 
+                            <label for="drama"> Drama</label><br>
+                            <input type="checkbox" id="fantasy" name="fantasy" value="Fantasy"> 
+                            <label for="fantasy"> Fantasy</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="historical" name="historical" value="Historical"> 
+                            <label for="historical"> Historical</label><br>
+                            <input type="checkbox" id="horror" name="horror" value="Horror"> 
+                            <label for="horror"> Horror</label><br>
+                            <input type="checkbox" id="romance" name="romance" value="romance">
+                            <label for="romance"> Romance</label><br>
+                            <input type="checkbox" id="satire" name="satire" value="satire">
+                            <label for="satire">Satire</label><br>
+                            <input type="checkbox" id="sci-fi" name="sci-fi" value="sci-fi">
+                            <label for="sci-fi"> Sci-fi</label><br>
+                            <input type="checkbox" id="thriller" name="thriller" value="thriller">
+                            <label for="thriller"> Thriller</label><br>
+                            <input type="checkbox" id="western" name="western" value="western">
+                            <label for="western"> Westen</label><br>
+
+                        </td> --}}
+                    </tr>
+                </table>
+                
+            </div>
+            <div class="btn"><button id="button">Update Profile</button> </div>
+
+            <div class="btn"><button id="button2" onclick="location.href='/logout'">Log-Out</button> </div>
+        </div>
+        <!--DI PA TO GUMAGANA DI KO MAAYOS-->
+        <div class="bottomFixButtionComponent">
+            <button class="addList"><img id = "addListPic" src="assets/addList.png"
+                onmouseover="this.src='assets/addList2.png'" onmouseout="this.src='assets/addList.png'"></button>
+        </div>
+    </div>
+
+    <!--MODALLLLLLLL-->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="inreg">
+                <h1>Update Profile</h1><br>
+                <form action="/update-profile" method = "post">
+                    <table>
+                        <tr>
+                            <td class="flabel"><label for="fname">First Name:</label></td>
+                            <td class="fint" colspan = "2"><input type="text" size="30" id="fname" name="fname" value="{{ fname }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="flabel"><label for="lname">Last Name:</label></td>
+                            <td class="fint" colspan = "2" ><input type="text" size="30" id="lname" name="lname" value="{{ lname }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="flabel"><label for="uname">Username:</label></td>
+                            <td class="fint" colspan = "2"><input readonly type="text" size="30" id="uname" name="uname" value="{{ uname }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="flabel"><label for="password">Current Password:</label></td>
+                            <td class="fint" colspan = "2"><input type="password" size="30" id="password" name="password" value="{{password}}"><br></td>
+                        </tr>
+                        <tr>
+                            <td class="flabel"><label for="npassword">New Password:</label></td>
+                            <td class="fint" colspan = "2"><input type="password" size="30" id="npassword" name="npassword" placeholder="Enter New Password..."><br></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="action" name="genres" value="Action"> 
+                                <label for="action"> Action</label><br>
+                                <input type="checkbox" id="adventure" name="genres" value="Adventure"> 
+                                <label for="adventure"> Adventure</label><br>
+                                <input type="checkbox" id="comedy" name="genres" value="Comedy"> 
+                                <label for="comedy"> Comedy</label><br>
+                                <input type="checkbox" id="crime" name="genres" value="Crime"> 
+                                <label for="crime"> Crime</label><br>
+                                <input type="checkbox" id="mystery" name="genres" value="Mystery"> 
+                                <label for="mystery"> Mystery</label><br>
+                                <input type="checkbox" id="drama" name="genres" value="Drama"> 
+                                <label for="drama"> Drama</label><br>
+                                <input type="checkbox" id="fantasy" name="genres" value="Fantasy"> 
+                                <label for="fantasy"> Fantasy</label><br>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="historical" name="genres" value="Historical"> 
+                                <label for="historical"> Historical</label><br>
+                                <input type="checkbox" id="horror" name="genres" value="Horror"> 
+                                <label for="horror"> Horror</label><br>
+                                <input type="checkbox" id="romance" name="genres" value="Romance">
+                                <label for="romance"> Romance</label><br>
+                                <input type="checkbox" id="satire" name="genres" value="Satire">
+                                <label for="satire">Satire</label><br>
+                                <input type="checkbox" id="sci-fi" name="genres" value="Sci-fi">
+                                <label for="sci-fi"> Sci-fi</label><br>
+                                <input type="checkbox" id="thriller" name="genres" value="Thriller">
+                                <label for="thriller"> Thriller</label><br>
+                                <input type="checkbox" id="western" name="genres" value="Western">
+                                <label for="western"> Western</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="flabel"><label for="bio">Bio (optional):</label></td>
+                            <td id="bioint" colspan = "2"><textarea id="bio" name="bio" cols="30" rows="4" >
+                                {{ bio }}
+                            </textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="flabel">
+                                <label for="avatar">Choose Avatar:</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="a1" name="avatar" value=1>  
+                                <img id = "profileBt" src = "assets/1.png">
+                            </td>
+                            <td>
+                                <input type="radio" id="a2" name="avatar" value=2>
+                                <img id = "profileBt" src = "assets/2.png">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="radio" id="a3" name="avatar" value=3> 
+                                <img id = "profileBt" src = "assets/3.png">
+                            </td>
+                            <td>
+                                <input type="radio" id="a4" name="avatar" value=4> 
+                                <img id = "profileBt" src = "assets/4.png">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="btn"><input id="button" type="submit" value="Update"></div>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+      
+    </div>
+    
+    {{> createlist }}
+    
+    <script>
+      // Get the modal
+      var modalList = document.getElementById("myModalList");
+      
+      // Get the button that opens the modal
+      var btnList = document.getElementsByClassName("addList")[0];
+      
+      // Get the <span> element that closes the modal
+      var spanList = document.getElementsByClassName("close")[1];
+      
+      // When the user clicks the button, open the modal 
+      btnList.onclick = function() {
+        modalList.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      spanList.onclick = function() {
+        modalList.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modalList) {
+          modalList.style.display = "none";
+        }
+      }
+    
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("button");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+
+</body>
+</html>
